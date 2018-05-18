@@ -8,16 +8,23 @@ import { Router } from '@angular/router';
 	styleUrls: [ './login.component.scss' ]
 })
 export class LoginComponent implements OnInit {
-	constructor(
-    private _authService: AuthService,
-    private _router: Router
-  ) {}
+	public userName: string;
+	public userPass: string;
+
+	constructor(private _authService: AuthService, private _router: Router) {}
 
 	ngOnInit() {}
 
 	autheticate() {
-    if (this._authService.authenticateUser('admin', 'dfgdfg')) {
-      this._router.navigate(['/home']);
-    }
-  }
+		if (this._authService.authenticateUser(this.userName, this.userPass)) {
+			this._router.navigate([ '/home' ]);
+		} else {
+			this.cleanFields();
+		}
+	}
+
+	cleanFields() {
+		this.userName = '';
+		this.userPass = '';
+	}
 }
