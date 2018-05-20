@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Route, CanLoad, Router } from '@angular/router';
-
+import { AuthService } from './authentication/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthGuard implements CanLoad {
+	constructor(
+		private _router: Router,
+		private _http: HttpClient,
+		private _authService: AuthService
+	) {}
 
-  constructor(
-    // private _auth: AuthService,
-    private _router: Router
-  ) {}
-
-  canLoad(route: Route): boolean {
-    // if (!this._auth.validatePassword()) {
-    //   this._router.navigate(['login']);
-    // } else {
-    //   return this._auth.validatePassword();
-    // }
-    // return this._auth.validatePassword();
-    return false;
-  }
-
+	canLoad(route: Route): boolean {
+		if (this._authService.getSession() !== '') {
+			return true;
+		} else {
+			this._router.navigate([ 'login' ]);
+		}
+	}
 }

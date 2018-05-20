@@ -6,9 +6,21 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatInputModule, MatSelectModule, MatOptionModule } from '@angular/material';
+
 @NgModule({
-	imports: [ CommonModule, AuthenticationRoutingModule, FormsModule ],
+	imports: [
+    CommonModule,
+    AuthenticationRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
+   ],
 	providers: [ AuthService ],
-	declarations: [ LoginComponent ]
+	declarations: [ LoginComponent ],
 })
 export class AuthenticationModule {}

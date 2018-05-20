@@ -1,0 +1,11 @@
+@import './../../app.component.scss';
+
+h1 {
+  font-size: 90px;
+  font-weight: bold;
+}
+
+.page-content-notfound {
+  position: relative;
+  top: calc(35% - 1em);
+}

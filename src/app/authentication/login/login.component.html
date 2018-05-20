@@ -1,13 +1,20 @@
-<form (submit)="autheticate()" class="login-container">
-  <div>
-    <label>Usuario: </label>
-    <input type="text" name='user' [(ngModel)]='userName' #user='ngModel'>
+<div class='page-container'>
+  <div class='page-content-login'>
+      <div class='content-box'>
+          <form (submit)="autheticate()" class="login-container">
+              <div>
+                <input class='login-input' matInput type="text" name='user' [(ngModel)]='userName' #user='ngModel' placeholder="Usuario:">
+              </div>
+              <div>
+                <input class='login-input' matInput type="password" name='pass' [(ngModel)]='userPass' #pass='ngModel' placeholder="Contraseña:">
+              </div>
+              <button mat-raised-button color="primary" type="submit">Entrar</button>
+              <p style="font-size: 8px">
+                <i>"user: admin, pass: 1234"</i>
+              </p>
+            </form>
+      </div>
   </div>
-  <div>
-    <label>Contraseña: </label>
-    <input type="password" name='pass' [(ngModel)]='userPass' #pass='ngModel'>
-  </div>
-  <button type="submit" >Entrar</button>
-  <p style="font-size: 8px"><i>"user: admin, pass: 1234"</i></p>
-</form>
-<!-- <a href='' [routerLink]="['/home']">Entrar</a> -->
+</div>
+
+

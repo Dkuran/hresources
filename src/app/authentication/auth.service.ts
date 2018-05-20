@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsersMockService } from './../mocks/data-mock.service';
+import { User } from './../shared/user.interface';
 
 @Injectable()
 export class AuthService {
 	private users: any = [];
+	private user: User = {
+		user: '',
+		pass: '',
+		session: ''
+	};
 
 	constructor(private _http: HttpClient) {
 		this.fetchUsers();
@@ -12,24 +18,33 @@ export class AuthService {
 
 	fetchUsers() {
 		this._http.get('api/user').subscribe((userData) => {
-      console.log(userData);
+			console.log(userData);
 			this.users = userData;
 		});
 		// this._http.get('api/employee').subscribe(console.log);
 		// this._http.get('api/project').subscribe(console.log);
 	}
 
+	getSession() {
+		return this.user.session;
+	}
+
 	authenticateUser(user: string, pass: string): boolean {
 		let isValidUser = false;
-		const objectUser = this.users.find((userItem) => {
+		this.user = this.users.find((userItem) => {
 			console.log(userItem);
 			return userItem.user === user;
 		});
 
-		if (objectUser) {
-			console.log(objectUser);
-      objectUser.pass === pass ? (isValidUser = true) : (isValidUser = false);
-      // ponerle sesion aqui al usuario para que en el guard solo verifique sesion !!
+		if (this.user) {
+			console.log(this.user);
+			this.user.pass === pass ? (isValidUser = true) : (isValidUser = false);
+			this.user.session = 'dskjfhsdkjf89457';
+			this._http.put('api/user', this.user).subscribe();
+			// this._http.post('api/user', { user: 'admin', pass: '1234', session: '' }).subscribe();
+			// this.fetchUsers();
+			// this._http.delete('api/user/' + this.user.id).subscribe();
+			// this.fetchUsers();
 		}
 
 		return isValidUser;
