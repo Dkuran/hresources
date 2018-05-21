@@ -14,6 +14,12 @@ export class ProjectListComponent implements OnInit {
 	public projectData: any[] = undefined;
 	private url = 'api/project';
 
+  public newProject: Project = {
+    name: 'test',
+    teamSize: 0,
+    client: 'TFC'
+  };
+
   constructor(
     private _resourceService: ResourcesService
   ) { }
@@ -37,7 +43,11 @@ export class ProjectListComponent implements OnInit {
   }
 
   createProject() {
-
+    this._resourceService.saveResource(this.url, this.newProject).subscribe(
+      response => {
+        this.fetchProjects();
+      }
+    );
   }
 
 }

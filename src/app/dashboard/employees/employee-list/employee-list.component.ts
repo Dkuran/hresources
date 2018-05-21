@@ -12,7 +12,15 @@ export class EmployeeListComponent implements OnInit {
 	public employeeSource: MatTableDataSource<Employee>;
 	public employeeColumns = [ 'name', 'company', 'age', 'birthday', 'color', 'actions' ];
 	public employeeData: any[] = undefined;
-	private url = 'api/employee';
+  private url = 'api/employee';
+
+  public newEmployee: Employee = {
+    name: 'Juan',
+    company: 'Yuxi',
+    age: 25,
+    birthday: '04/12/1993',
+    color: 'blue'
+  };
 
 	constructor(
     private _resourceService: ResourcesService
@@ -36,7 +44,11 @@ export class EmployeeListComponent implements OnInit {
 		});
   }
 
-  createEmployee(){
-
+  createEmployee() {
+    this._resourceService.saveResource(this.url, this.newEmployee).subscribe(
+      response => {
+        this.fetchEmployees();
+      }
+    );
   }
 }
