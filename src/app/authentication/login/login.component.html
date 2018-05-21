@@ -3,10 +3,10 @@
       <div class='content-box'>
           <form (submit)="autheticate()" class="login-container">
               <div>
-                <input class='login-input' matInput type="text" name='user' [(ngModel)]='userName' #user='ngModel' placeholder="Usuario:">
+                <input class='login-input' type="text" name='user' [(ngModel)]='userName' #user='ngModel' placeholder="Usuario:">
               </div>
               <div>
-                <input class='login-input' matInput type="password" name='pass' [(ngModel)]='userPass' #pass='ngModel' placeholder="Contraseña:">
+                <input class='login-input' type="password" name='pass' [(ngModel)]='userPass' #pass='ngModel' placeholder="Contraseña:">
               </div>
               <button mat-raised-button color="primary" type="submit">Entrar</button>
               <p style="font-size: 8px">

@@ -45,4 +45,12 @@ export class AuthService {
 
 		return isValidUser;
 	}
+
+	logOutUser() {
+		this.user = {
+			user: '',
+			pass: '',
+			session: ''
+		};
+	}
 }
