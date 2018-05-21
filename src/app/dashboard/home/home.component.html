@@ -9,8 +9,6 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <!-- [routerLink]="['./dashboard']" -->
-      <!-- <a mat-list-item href="..." (click)="showMenu = true" > Menu </a> -->
       <a mat-list-item href="..." (click)="showMenu = false" [routerLink]="['./employee']"> Employee </a>
       <a mat-list-item href="..." (click)="showMenu = false" [routerLink]="['./project']"> Projects </a>
       <a mat-list-item href="..." (click)='logout()' [routerLink]="['/']"> Logout </a>
@@ -26,8 +24,6 @@
     <router-outlet></router-outlet>
     <div *ngIf='showMenu'>
       <mat-grid-list cols="2" rowHeight="2:1">
-        <!-- <mat-grid-tile><mat-icon class='menu-icon' aria-label="Edit">people</mat-icon></mat-grid-tile> -->
-        <!-- <mat-grid-tile><mat-icon class='menu-icon' aria-label="Edit">folder</mat-icon></mat-grid-tile> -->
         <mat-grid-tile>
           <a href="..." (click)="showMenu = false" [routerLink]="['./employee']">
             <mat-icon class='menu-icon' aria-label="Edit">people</mat-icon>
@@ -42,24 +38,6 @@
         </mat-grid-tile>
       </mat-grid-list>
     </div>
-    <!-- <div class='page-container' *ngIf='showMenu'>
-        <div class='page-content-dashboard '>
-          <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>
-              <mat-card>
-                  <button [routerLink]="['./employee']" ><mat-icon class='menu-icon' aria-label="Edit">people</mat-icon></button>
-                  <label>Empleados</label>
-              </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card>
-                    <button [routerLink]="['./project']" ><mat-icon class='menu-icon' aria-label="Edit">folder</mat-icon></button>
-                    <label>Proyectos</label>
-                </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
-        </div>
-      </div> -->
   </mat-sidenav-content>
 
 </mat-sidenav-container>

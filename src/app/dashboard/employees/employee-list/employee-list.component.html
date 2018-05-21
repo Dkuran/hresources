@@ -1,11 +1,8 @@
 <div class="employee-container" *ngIf='employeeData !== undefined'>
-  <!-- <app-list [displayedColumns]='employeeColumns' [dataSource]='employeeSource'></app-list> -->
   <mat-card class="example-card">
 
     <mat-card-header>
-      <!-- <button mat-raised-button
-                      color="primary"
-                      (click)="navigateTo(-1, 'create')">New project</button> -->
+        <button mat-raised-button color="primary" (click)="createEmployee()">New Employee</button>
     </mat-card-header>
     <mat-card-content>
 

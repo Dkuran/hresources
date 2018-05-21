@@ -17,6 +17,9 @@ export class UsersMockService implements InMemoryDbService {
 
     const project = [
       { id: 1, name: 'Producto Base', teamSize: 0, client: 'Todo1' },
+      { id: 2, name: 'Colte', teamSize: 4, client: 'Todo1' },
+      { id: 3, name: 'Da Vivienda', teamSize: 2, client: 'Todo1' },
+      { id: 4, name: 'Celulas', teamSize: 1, client: 'Todo1' },
     ];
 
     return {user, employee, project};

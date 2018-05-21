@@ -14,7 +14,9 @@ export class EmployeeListComponent implements OnInit {
 	public employeeData: any[] = undefined;
 	private url = 'api/employee';
 
-	constructor(private _resourceService: ResourcesService) {}
+	constructor(
+    private _resourceService: ResourcesService
+  ) {}
 
 	ngOnInit() {
     this.fetchEmployees();
@@ -32,5 +34,9 @@ export class EmployeeListComponent implements OnInit {
 		this._resourceService.deleteResource(this.url, employee.id).subscribe((response) => {
       this.fetchEmployees();
 		});
-	}
+  }
+
+  createEmployee(){
+
+  }
 }

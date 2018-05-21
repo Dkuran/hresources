@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EmployeesRoutingModule } from './employees-routing.module';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { ProjectsRoutingModule } from './projects-routing.module';
+import { ProjectListComponent } from './project-list/project-list.component';
 import { SharedModule } from './../../shared/shared.module';
 
 import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatButtonModule } from '@angular/material';
@@ -10,14 +10,14 @@ import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatBu
 @NgModule({
 	imports: [
 		CommonModule,
-		EmployeesRoutingModule,
-		SharedModule,
+		ProjectsRoutingModule,
 		MatCardModule,
 		MatIconModule,
 		MatPaginatorModule,
-    MatTableModule,
-    MatButtonModule
+		MatTableModule,
+		SharedModule,
+		MatButtonModule
 	],
-	declarations: [ EmployeeListComponent ]
+	declarations: [ ProjectListComponent ]
 })
-export class EmployeesModule {}
+export class ProjectsModule {}
