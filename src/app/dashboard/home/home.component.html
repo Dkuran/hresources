@@ -1,6 +1,64 @@
-<p>
-  home works!
-</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="'navigation'" [mode]="'over'" [opened]="false">
+    <mat-toolbar color="primary">
+      Menu
+      <span class="example-spacer"></span>
 
-<a href='' [routerLink]="['admin/employee']">Employee</a>
-<a href='' [routerLink]="['admin/project']">Projects</a>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <!-- [routerLink]="['./dashboard']" -->
+      <!-- <a mat-list-item href="..." (click)="showMenu = true" > Menu </a> -->
+      <a mat-list-item href="..." (click)="showMenu = false" [routerLink]="['./employee']"> Employee </a>
+      <a mat-list-item href="..." (click)="showMenu = false" [routerLink]="['./project']"> Projects </a>
+      <a mat-list-item href="..." (click)='logout()'> Logout </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content role="'main'">
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>HR Management</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <div *ngIf='showMenu'>
+      <p>{{showMenu}}</p>
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <!-- <mat-grid-tile><mat-icon class='menu-icon' aria-label="Edit">people</mat-icon></mat-grid-tile> -->
+        <!-- <mat-grid-tile><mat-icon class='menu-icon' aria-label="Edit">folder</mat-icon></mat-grid-tile> -->
+        <mat-grid-tile>
+          <a href="..." (click)="showMenu = false" [routerLink]="['./employee']">
+            <mat-icon class='menu-icon' aria-label="Edit">people</mat-icon>
+          </a>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <a href="..." (click)="showMenu = false" [routerLink]="['./project']">
+            <mat-icon class='menu-icon' aria-label="Edit">folder</mat-icon>
+          </a>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <!-- <div class='page-container' *ngIf='showMenu'>
+        <div class='page-content-dashboard '>
+          <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+              <mat-card>
+                  <button [routerLink]="['./employee']" ><mat-icon class='menu-icon' aria-label="Edit">people</mat-icon></button>
+                  <label>Empleados</label>
+              </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card>
+                    <button [routerLink]="['./project']" ><mat-icon class='menu-icon' aria-label="Edit">folder</mat-icon></button>
+                    <label>Proyectos</label>
+                </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div> -->
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

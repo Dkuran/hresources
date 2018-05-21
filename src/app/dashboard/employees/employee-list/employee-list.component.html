@@ -1,0 +1,59 @@
+<div class="employee-container" *ngIf='employeeData !== undefined'>
+  <!-- <app-list [displayedColumns]='employeeColumns' [dataSource]='employeeSource'></app-list> -->
+  <mat-card class="example-card">
+
+    <mat-card-header>
+      <!-- <button mat-raised-button
+                      color="primary"
+                      (click)="navigateTo(-1, 'create')">New project</button> -->
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="employeeSource">
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="company">
+            <mat-header-cell *matHeaderCellDef> Compañia </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef> Edad </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="birthday">
+            <mat-header-cell *matHeaderCellDef> Cumpleaños </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.birthday}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef> Color </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.color}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <button type='button'><mat-icon aria-label="Edit">edit</mat-icon></button>
+                <button type='button' (click)="deleteEmployee(element)"><mat-icon aria-label="Delete">delete</mat-icon></button>
+              </mat-cell>
+            </ng-container>
+
+          <mat-header-row *matHeaderRowDef="employeeColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: employeeColumns;"></mat-row>
+        </mat-table>
+
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+        </mat-paginator>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+
+</div>

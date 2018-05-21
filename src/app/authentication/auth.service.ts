@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UsersMockService } from './../mocks/data-mock.service';
+// import { UsersMockService } from './../mocks/data-mock.service';
 import { User } from './../shared/user.interface';
 
 @Injectable()
@@ -41,10 +41,6 @@ export class AuthService {
 			this.user.pass === pass ? (isValidUser = true) : (isValidUser = false);
 			this.user.session = 'dskjfhsdkjf89457';
 			this._http.put('api/user', this.user).subscribe();
-			// this._http.post('api/user', { user: 'admin', pass: '1234', session: '' }).subscribe();
-			// this.fetchUsers();
-			// this._http.delete('api/user/' + this.user.id).subscribe();
-			// this.fetchUsers();
 		}
 
 		return isValidUser;

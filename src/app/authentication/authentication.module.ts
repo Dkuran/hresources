@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatSelectModule, MatOptionModule } from '@angular/material';
+import { MatButtonModule, MatInputModule } from '@angular/material';
 
 @NgModule({
 	imports: [
@@ -17,8 +17,6 @@ import { MatButtonModule, MatInputModule, MatSelectModule, MatOptionModule } fro
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule,
-    MatOptionModule
    ],
 	providers: [ AuthService ],
 	declarations: [ LoginComponent ],
