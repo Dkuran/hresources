@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ResourcesService } from './../../../shared/service/resources.service';
 import { Employee } from './../../../shared/employee.interface';
 import { MatTableDataSource } from '@angular/material';
+import { CreateEmployeeComponent } from './../create-employee/create-employee.component';
+// import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-employee-list',
@@ -14,16 +16,9 @@ export class EmployeeListComponent implements OnInit {
 	public employeeData: any[] = undefined;
   private url = 'api/employee';
 
-  public newEmployee: Employee = {
-    name: 'Juan',
-    company: 'Yuxi',
-    age: 25,
-    birthday: '04/12/1993',
-    color: 'blue'
-  };
-
 	constructor(
-    private _resourceService: ResourcesService
+    private _resourceService: ResourcesService,
+    // private _router: Router
   ) {}
 
 	ngOnInit() {
@@ -44,11 +39,4 @@ export class EmployeeListComponent implements OnInit {
 		});
   }
 
-  createEmployee() {
-    this._resourceService.saveResource(this.url, this.newEmployee).subscribe(
-      response => {
-        this.fetchEmployees();
-      }
-    );
-  }
 }

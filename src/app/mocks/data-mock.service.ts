@@ -9,10 +9,10 @@ export class UsersMockService implements InMemoryDbService {
     ];
 
     const employee = [
-      { id: 1, name: 'Andres', company: 'Todo1', age: '28', birthday: '03/02/1990', color: 'negro', project: []},
-      { id: 2, name: 'Constanza', company: 'Juzgado', age: '21', birthday: '03/02/1990', color: 'negro', project: []},
-      { id: 3, name: 'Carolina', company: 'MSP', age: '27', birthday: '03/02/1990', color: 'negro', project: []},
-      { id: 4, name: 'Maria Jose', company: 'ESPE', age: '24', birthday: '03/02/1990', color: 'negro', project: []},
+      { id: 1, name: 'Andres', company: 'Todo1', age: '28', birthday: '1990-03-22', color: 'negro', project: []},
+      { id: 2, name: 'Constanza', company: 'Juzgado', age: '21', birthday: '1990-03-22', color: 'negro', project: []},
+      { id: 3, name: 'Carolina', company: 'MSP', age: '27', birthday: '1990-03-22', color: 'negro', project: []},
+      { id: 4, name: 'Maria Jose', company: 'ESPE', age: '24', birthday: '1990-03-22', color: 'negro', project: []},
     ];
 
     const project = [

@@ -4,8 +4,16 @@ import { CommonModule } from '@angular/common';
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { SharedModule } from './../../shared/shared.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatButtonModule } from '@angular/material';
+import {
+	MatCardModule,
+	MatIconModule,
+	MatPaginatorModule,
+	MatTableModule,
+	MatButtonModule,
+} from '@angular/material';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 
 @NgModule({
 	imports: [
@@ -15,9 +23,11 @@ import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatBu
 		MatCardModule,
 		MatIconModule,
 		MatPaginatorModule,
-    MatTableModule,
-    MatButtonModule
+		MatTableModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule
 	],
-	declarations: [ EmployeeListComponent ]
+	declarations: [ EmployeeListComponent, CreateEmployeeComponent ],
 })
 export class EmployeesModule {}

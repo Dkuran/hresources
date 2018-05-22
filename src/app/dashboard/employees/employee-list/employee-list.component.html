@@ -2,7 +2,8 @@
   <mat-card class="example-card">
 
     <mat-card-header>
-        <button mat-raised-button color="primary" (click)="createEmployee()">New Employee</button>
+        <!-- (click)="createEmployee()" -->
+        <button mat-raised-button color="primary" [routerLink]="['./manage', '']">New Employee</button>
     </mat-card-header>
     <mat-card-content>
 
@@ -36,7 +37,7 @@
           <ng-container matColumnDef="actions">
               <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
               <mat-cell *matCellDef="let element">
-                <button type='button'><mat-icon aria-label="Edit">edit</mat-icon></button>
+                <button type='button'><mat-icon aria-label="Edit" [routerLink]="['./manage', element.id ]">edit</mat-icon></button>
                 <button type='button' (click)="deleteEmployee(element)"><mat-icon aria-label="Delete">delete</mat-icon></button>
               </mat-cell>
             </ng-container>

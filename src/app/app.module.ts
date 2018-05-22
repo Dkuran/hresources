@@ -12,6 +12,8 @@ import { UsersMockService } from './mocks/data-mock.service';
 
 import { AuthGuard } from './auth-guard.service';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
 
 	declarations: [ AppComponent, NotFoundComponent ],
@@ -20,7 +22,9 @@ import { AuthGuard } from './auth-guard.service';
 		AppRoutingModule,
 		AuthenticationModule,
 		HttpClientModule,
-		HttpClientInMemoryWebApiModule.forRoot(UsersMockService)
+    HttpClientInMemoryWebApiModule.forRoot(UsersMockService),
+    FormsModule,
+    ReactiveFormsModule
 	],
 	providers: [ AuthGuard ],
 	bootstrap: [ AppComponent ]
