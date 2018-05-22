@@ -6,6 +6,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { SharedModule } from './../../shared/shared.module';
 
 import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatButtonModule } from '@angular/material';
+import { ManageProjectComponent } from './manage-project/manage-project.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
 	imports: [
@@ -16,8 +18,10 @@ import { MatCardModule, MatIconModule, MatPaginatorModule, MatTableModule, MatBu
 		MatPaginatorModule,
 		MatTableModule,
 		SharedModule,
-		MatButtonModule
+		MatButtonModule,
+		ReactiveFormsModule,
+		FormsModule
 	],
-	declarations: [ ProjectListComponent ]
+	declarations: [ ProjectListComponent, ManageProjectComponent ]
 })
 export class ProjectsModule {}

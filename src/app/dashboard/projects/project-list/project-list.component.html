@@ -1,7 +1,7 @@
 <div class="project-container" *ngIf='projectData !== undefined'>
   <mat-card class="example-card">
     <mat-card-header>
-      <button mat-raised-button color="primary" (click)="createProject()">New project</button>
+      <button mat-raised-button color="primary" [routerLink]="['./manage', '']">New project</button>
     </mat-card-header>
     <mat-card-content>
 
@@ -26,7 +26,7 @@
             <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
             <mat-cell *matCellDef="let element">
               <button type='button'>
-                <mat-icon aria-label="Edit">edit</mat-icon>
+                <mat-icon aria-label="Edit" [routerLink]="['./manage', element.id ]">edit</mat-icon>
               </button>
               <button type='button' (click)="deleteProject(element)">
                 <mat-icon aria-label="Delete">delete</mat-icon>

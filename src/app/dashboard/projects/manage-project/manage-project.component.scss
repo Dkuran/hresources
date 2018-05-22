@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.project-container {
+  padding: 100px 200px 50px 200px;
+}
+
+mat-card-header {
+  padding-bottom: 50px;
+}
+
+.project-form {
+  display: inline-grid;
+  width: 100%;
+}
